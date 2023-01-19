@@ -1,0 +1,631 @@
+@use "_reset.scss";
+
+$primary-400:hsl(219, 30%, 18%); //testimonials background
+$primary-300:hsl(217, 28%, 15%); //intro and email sign up background
+$primary-200:hsl(218, 28%, 13%); //main background
+$primary-100:hsl(216, 53%, 9%); //footer background
+
+$accent-900:hsl(0, 0%, 100%);
+$accent-800:hsl(176, 68%, 64%); //inside call-to-action gradient
+$accent-700:hsl(198, 60%, 50%); //inside call-to-action gradient
+$accent-600:hsl(0, 100%, 63%); //error
+
+$ff-paragraph: 'Open Sans', sans-serif;
+$ff-header:'Raleway', sans-serif;
+
+
+body{
+    background-color: $primary-300;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main{
+    align-self: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header{
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    padding-inline: 5vw;
+    padding-block: 2%;
+    
+}
+
+.primaryNavigation{
+    display: flex;
+    flex-direction: row;
+    min-width: 25vw;
+}
+
+.navigationList{
+     width: 100%;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    color: $accent-900;
+    overflow: hidden;
+    justify-content: space-around;
+    li{
+        //margin-left:10% ;
+        a{
+            width: 100%;
+            font-family: $ff-header;
+            opacity: 0.75;
+            font-size: clamp(0.5rem, 1vw, 2rem);
+            color: $accent-900;
+            text-decoration: none;
+            &:hover,
+            &:focus{
+                opacity: 1;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+
+
+.introSection{
+    color: $accent-900;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-self: center;
+    align-items: center;
+    background-image: url(images/bg-curvy-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+    img{
+        width: 40%;
+        
+    }
+    h1{
+        font-family: $ff-header;
+        font-weight: 700;
+        font-size: clamp(1rem, 2vw, 3rem);
+        padding-block: 2%;
+        width: 30ch;
+        text-align: center;
+    }
+    h2{
+        font-family: $ff-paragraph;
+        font-weight: 400;
+        width: 60ch;
+        font-size: clamp(0.5rem, 1vw, 2rem);
+        opacity: 0.9;
+       text-align: center;
+    }
+    button{
+        border: 0;
+        font-size: clamp(0.5rem, 1.5vw, 2rem) ;
+        background-image: linear-gradient(90deg, $accent-800 0%, $accent-700 100%);
+        border-radius: 80px; 
+        color: $accent-900;
+        font-family: $ff-header;
+        padding: 0.5em 3em;
+        margin-block: 2%;
+        &:hover,
+        &:focus{
+            background-color: $accent-800;
+            background-image: none;
+            cursor: pointer;
+        }
+    }
+}
+
+.sectionUtility{
+    width: 100%;
+    padding-inline: 5vw;
+    padding-block:5%
+}
+
+.perksSection{
+    background-color: $primary-200;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "perkAccess perkSecurity"
+    "perkCollab perkStore";
+    gap: 10%;
+}
+
+.perk{
+    
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    color: $accent-900;
+    h2{
+        font-weight: 700;
+        font-family: $ff-header;
+        font-size: clamp(0.5rem, 1.5vw, 3rem);
+    }
+    img{
+        width: 20%;
+        padding: 4%;
+    }
+    h3{
+        width: 50ch;
+        font-family: $ff-paragraph;
+        opacity: 0.9;
+        font-weight: 400;
+    }
+}
+
+.perkAccess{
+    grid-area: perkAccess;
+    margin-left: 20%;
+}
+
+.perkSecurity{
+    grid-area: perkSecurity;
+    margin-right: 20%;
+    padding-bottom: 10%;
+}
+
+.perkCollab{
+    grid-area: perkCollab;
+    margin-left: 20%;
+}
+
+.perkStore{
+    grid-area: perkStore;
+    margin-right: 20%;
+}
+
+
+.productiveSection{
+    background-color: $primary-200;
+    display: flex;
+    flex-direction: row;
+    img{
+        width: 45%;
+        margin-left: auto;
+        margin-right: 3%;
+    }
+
+    
+}
+
+
+.textWrapper{
+    width: 50%;
+    color: $accent-900;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 3%;
+    justify-content: center;
+    h2{
+        font-family: $ff-header;
+        font-weight: 700;
+        font-size: clamp(1rem, 2vw, 3rem);
+        width: 20ch;
+    }
+    p{
+        font-family: $ff-paragraph;
+        padding-block: 2%;
+        width: 60ch;
+    }
+    a{
+        width: fit-content;
+        margin-block: 1%;
+        color: $accent-800;
+        text-decoration: none;
+        font-family: $ff-paragraph;
+        border-bottom: 2px solid $accent-800;
+        &:hover{
+            transition: 500ms ease-in;
+            cursor: pointer;
+            color: $accent-900;
+            border-bottom: 2px solid $accent-900;
+        }
+    }
+    
+}
+
+
+
+.quotesSection{
+    background-color: $primary-200;
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+}
+
+
+.quote{
+    //margin-inline: 2%;
+    background-color: $primary-400;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 10px 10px 2px $primary-300;
+}
+
+blockquote{
+    color: $accent-900;
+    font-family: $ff-paragraph;
+    
+    padding: 5%;
+    padding-bottom: 0;
+    padding-top: 10%;
+    h3{
+        font-family: $ff-paragraph;
+        font-weight: 400;
+    }
+}
+
+
+.personalInfo{
+    display: flex;
+    flex-direction: row;
+    padding-inline: 5%;
+    img{
+        border-radius: 50%;
+        width:auto;
+        height: 30%;
+        aspect-ratio: 1 /1 ;
+        align-self: center;
+    }
+}
+
+.nameAndJob{
+   justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 5%;
+    h4{
+        font-weight: 700;
+        font-family: $ff-header;
+        color: $accent-900;
+        padding: 0;
+        margin: 0;
+    }
+    h5{
+        font-weight: 400;
+        font-family: $ff-paragraph;
+        color: $accent-900;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+
+
+.secondCTASection{
+    width: 100%;
+    background-image:linear-gradient( to bottom, $primary-200 0%, $primary-200 50%, $primary-100 50%, $primary-100 100%);
+    display: flex;
+}
+
+.secondaryCTA{
+    background-color: $primary-300;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color:$accent-900;
+    padding-inline: 5%;
+    padding-block: 3%;
+    width: fit-content;
+    margin-inline:auto;
+    border-radius: 15px;
+    
+    h2{
+        font-family: $ff-header;
+        font-size: clamp(1rem, 3vw, 3rem);
+    }
+    h3{
+        font-family: $ff-paragraph;
+        font-weight: 400;
+        width: 80ch;
+        padding-block: 2%;
+        font-size: clamp(0.7rem, 1vw, 3rem);
+    }
+    
+}
+
+.clickables{
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    input{
+        border-radius:100vw;
+        border: 0;
+        padding-block: 1%;
+        flex-grow: 1;
+        padding-inline: 3rem;
+    }
+    input:invalid{
+        border: 2px solid $accent-600;
+    }
+    button{
+        min-width: 30%;
+        background-image: linear-gradient();
+        border: 0;
+        font-size: clamp(0.5rem, 1vw, 2rem) ;
+        background-image: linear-gradient(90deg, $accent-800 0%, $accent-700 100%);
+        border-radius: 80px; 
+        color: $accent-900;
+        font-family: $ff-header;
+        padding: 0.7em 3em;
+        //margin-block: 2%;
+        &:hover,
+        &:focus{
+            background-color: $accent-800;
+            background-image: none;
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+footer{
+    background-color: $primary-100;
+    width: 100%;
+    padding: 5%;
+    color: $accent-900;
+    display: flex;
+    flex-direction: column;
+}
+
+.footerSpanner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 2%;
+}
+
+.footerItem{
+    display: flex;
+    flex-direction: column;
+    p{
+        width: 40ch;
+        font-family: $ff-paragraph;
+        font-weight: 400;
+    }
+    h3{
+        font-family: $ff-paragraph;
+        font-weight: 400;
+        padding-block: 5%;
+        opacity: 0.8;
+        &:hover{
+            opacity: 1;
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+
+@media only screen and (max-width:1000px){
+    // main, footer{
+    //     // *{
+    //     //     //outline: 1px solid limegreen;
+    //     // }
+    // }
+
+    header{
+        align-items: center;
+        outline: 0;
+        padding-block: 5%;
+        margin: 0;
+        img{
+            width: 20vw;
+            height: 6.76vw;
+        }
+    }
+    .primaryNavigation{
+        width: fit-content;
+        flex-grow: 1;
+        margin: 0;
+    }
+    .navigationList{
+        width: fit-content;
+        gap: 10%;
+        overflow: visible;
+        margin: 0;
+        flex-grow: 1;
+        li{
+            width: fit-content;
+            
+            a{
+                flex-grow: 1;
+                text-align: center;
+                min-width: 150px;
+                //width: fit-content;
+                flex-wrap: nowrap;
+                font-size: clamp(0.5rem, 4vw, 3rem);
+            }
+        }
+    }
+    .introSection{
+        background-image: url(images/bg-curvy-mobile.svg),
+        linear-gradient( to bottom, $primary-300 0%, $primary-300 60%, $primary-200 60%, $primary-200 100%);
+        background-position: center center;
+        img{
+            width: 90%;
+        }
+        h1{
+            font-size: clamp(1rem, 6vw, 2rem);
+            width: 85%;
+        }
+        h2{
+            font-size: clamp(0.5rem, 4vw, 2rem);
+            width: 85%;
+            padding-block: 5%;
+            //background-image: ;
+        }
+        button{
+           font-size: clamp(0.5rem, 6vw, 2rem);
+        }
+    }
+    .perksSection{
+        grid-template-areas:
+        "perkAccess"
+        "perkSecurity"
+        "perkCollab"
+        "perkStore";
+        margin: 0;
+        padding: 0;
+        gap: 0;
+    }
+    .productiveSection{
+        flex-direction: column;
+        //margin-top: 100%;
+        img{
+            width: 100%;
+        }
+        
+    }
+    .quotesSection{
+        flex-direction: column;
+        background-image: url(images/bg-quotes.png);
+        background-repeat: no-repeat;
+        background-position: 10% 5%;
+        padding-block: 20%;
+    }
+    .quote{
+        width: 90vw;
+        align-self: center;
+        height: 40vw;
+        margin-block: 5%;
+        padding-inline: 5%;
+        height: auto;
+        img{
+            width: 10vw;
+        }
+        h4{
+            font-size: clamp(0.5rem, 4vw, 2rem);
+        }
+        h5{
+            font-size: clamp(0.5rem, 3vw, 2rem);
+        }
+    }
+    .personalInfo{
+        padding-block: 5%;
+    }
+    blockquote{
+        h3{
+            font-size: clamp(0.3rem, 4vw, 3rem);
+        }
+    }
+    .footerSpanner{
+        flex-direction: column;
+    }
+
+
+    .perksSection{
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        height: fit-content;
+    }
+    .perk{
+        align-self: center;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        padding-block: 15%;
+        h2{
+            width:90%;
+            font-size: clamp(1rem, 6vw, 2rem);
+        }
+
+        h3{
+            width: 90%;
+            font-size: clamp(1rem, 4vw, 2rem);
+            padding-block: 5%;
+        }
+        img{
+            width: 30%;
+        }
+    }
+    .textWrapper{
+        width: 100%;
+        h2{
+            width: 100%;
+            padding-block: 5%;
+            flex-grow: 1;
+            font-size: clamp(1rem, 5vw, 2rem);
+        }
+        p{
+            width: 90%;
+            font-size:clamp(0.5rem, 4vw, 2rem) ;
+        }
+    }
+    .secondCTASection{
+        width: 100%;
+    }
+    .secondaryCTA{
+        width: 90%;
+        h2{
+            width: 100%;
+            font-size:clamp(1rem, 6vw, 3rem) ;
+            padding-top:10%;
+        }
+        h3{
+            width: 100%;
+            font-size:clamp(0.5rem, 4vw, 3rem) ;
+            padding-block: 5%;
+        }
+    }
+    .clickables{
+        flex-direction: column;
+        margin-block: 5%;
+        input{
+            padding-block: 2%;
+            margin-block: 5%;
+        }
+        button{
+            font-size: clamp(0.5rem, 4vw, 2rem);
+        }
+    }
+footer{
+    padding-block: 20%;
+}
+.footerItem{
+    padding-block: 5%;
+    p{
+        width: 100%;
+    }
+    h3{
+        padding-block: 1%;
+    }
+}
+
+
+
+
+
+}
+
+
+@media only screen and (min-width:1000px) and (max-width:1200px){
+    .perk{
+        margin-inline: auto;
+        h3{
+            font-size: clamp(0.5rem, 1.5vw, 2rem);
+            width: auto;
+        }
+    }
+    .textWrapper{
+        p{
+            width: auto;
+        }
+    }
+}
